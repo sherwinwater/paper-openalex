@@ -7,5 +7,15 @@ export default function MantineProvider({
 }: {
   children: React.ReactNode;
 }) {
-  return <DefaultMantineProvider>{children}</DefaultMantineProvider>;
+  return (
+    <DefaultMantineProvider
+      withGlobalStyles
+      withNormalizeCSS
+      theme={{
+        colorScheme: "light",
+      }}
+    >
+      {children}
+    </DefaultMantineProvider>
+  );
 }
